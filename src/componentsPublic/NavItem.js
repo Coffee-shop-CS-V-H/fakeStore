@@ -1,21 +1,21 @@
 import React from 'react'
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 
 function NavItem() {
   return (
     <Nav defaultActiveKey="/home" as="ul">
       <Nav.Item as="li">
-        <Nav.Link href="/home">Main</Nav.Link>
+        <Nav.Link as={Link} to="/home">Main</Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link eventKey="/profil">Profil</Nav.Link>
+        <Nav.Link as={Link} to="/profil">Profil</Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link eventKey="/products">Products</Nav.Link>
+        <Nav.Link as={Link} to="/products">Products</Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link eventKey="/cart">Cart</Nav.Link>
+        <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
       </Nav.Item>
     </Nav>
   );
