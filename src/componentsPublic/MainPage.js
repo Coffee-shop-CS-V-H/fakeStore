@@ -1,8 +1,10 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import CarouselItem from './CarouselItem'
+import { ApiContext } from '../contexts/ApiContext';
+const { tList } = useContext(ApiContext);
 function MainPage() {
   return (
-    <div>MainPage</div>
+    <CarouselItem one={tList[0]} two={tList[1]} three={tList[3]} />
   )
 }
 
