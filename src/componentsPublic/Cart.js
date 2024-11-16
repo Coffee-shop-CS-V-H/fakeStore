@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card';
 
 
 function Cart(props) {
-  const { total} = useContext(KosarContext);
-
+  
+const {kosar, dbModosit} = useContext(KosarContext);
   return (
     <>
        <Card style={{ width: '18rem'}}>
@@ -15,7 +15,7 @@ function Cart(props) {
         <Card.Text style={{ flexGrow: 1 }}>
         {props.product.price} $
         </Card.Text>
-       
+        
       </Card.Body>
     </Card>
     

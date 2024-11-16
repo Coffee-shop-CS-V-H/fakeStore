@@ -22,6 +22,7 @@ export const KosarProvider = ({ children }) => {
     }
 
     setKosar([...segedKosar]); 
+    
   }
 
   // A termék darabszámának módosítása
@@ -39,6 +40,7 @@ export const KosarProvider = ({ children }) => {
       }
 
       setKosar([...segedKosar]); 
+      osszeg()
     }
   }
 
@@ -49,7 +51,7 @@ export const KosarProvider = ({ children }) => {
   }
 
   return (
-    <KosarContext.Provider value={{ kosar, kosarba, dbModosit, osszeg }}>
+    <KosarContext.Provider value={{ kosar, kosarba, dbModosit, total }}>
       {children}
     </KosarContext.Provider>
   );

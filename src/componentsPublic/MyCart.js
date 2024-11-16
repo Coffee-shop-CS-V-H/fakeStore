@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { KosarContext } from '../contexts/KosarContext';
 
 function MyCart() {
-    const { kosar, osszeg } = useContext(KosarContext);
+    const { kosar} = useContext(KosarContext);
 
     return (
         <>
@@ -15,7 +15,7 @@ function MyCart() {
                 />;
                 
               })}
-              { <p>Fizetendő: {osszeg}</p>}
+              
             </div>
         </>
            
