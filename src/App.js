@@ -1,9 +1,6 @@
 
 import Products from './componentsPublic/Products';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-import './App.css';
 import MainPage from './componentsPublic/MainPage';
 
 
