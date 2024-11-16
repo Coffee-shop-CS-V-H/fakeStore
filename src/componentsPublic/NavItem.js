@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 
 function NavItem() {
   return (
+    <>
+    <p className="text-center mt-4 mb-4">Fakestore webshop</p>
     <Nav defaultActiveKey="/home" as="ul">
       <Nav.Item as="li">
         <Nav.Link as={Link} to="/home">Main</Nav.Link>
@@ -18,6 +20,8 @@ function NavItem() {
         <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
       </Nav.Item>
     </Nav>
+    </>
+    
   );
 }
 

@@ -4,8 +4,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from './componentsPublic/MainPage';
 import Profil from './componentsPublic/Profil';
 import Products from './componentsPublic/Products';
-import Cart from './componentsPublic/Cart';
 import NavItem from './componentsPublic/NavItem';
+import MyCart from './componentsPublic/MyCart';
 function App() {
   return (
     <BrowserRouter>
@@ -15,7 +15,7 @@ function App() {
               <Route  path="/home" element={<MainPage/>}/>
               <Route path="/profil" element={<Profil/>}/>
               <Route path ="/products"element={<Products/>}/>
-              <Route path="/cart" element={<Cart/>}/>
+              <Route path="/cart" element={<MyCart/>}/>
           </Routes>
      
         </div>
