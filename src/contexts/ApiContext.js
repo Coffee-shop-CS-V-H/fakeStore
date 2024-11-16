@@ -5,13 +5,14 @@ export const ApiContext = createContext("");
 export const ApiProvider = ({ children }) => {
   const [tList, setTList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [userList, setUsers]=useState([]);
 
-  function getdata(endPoint) {
+  function getdata(endPoint, setter) {
     myAxios
       .get(endPoint)
       .then(function (response) {
         console.log(response.data);
-        setTList(response.data);
+        setter(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -30,11 +31,12 @@ export const ApiProvider = ({ children }) => {
       .finally(function () {});
   }
   useEffect(() => {
-    getdata(`/products`);
+    getdata(`/products`, setTList);
+    getdata('/users', setUsers)
   }, []);
 
   return (
-    <ApiContext.Provider value={{tList, postdata, loading}}>
+    <ApiContext.Provider value={{tList, postdata, loading, userList}}>
       {children}
     </ApiContext.Provider>
   );
