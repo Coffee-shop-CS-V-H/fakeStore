@@ -13,7 +13,7 @@ function Profil() {
 
   return (
     <div>
-      <img src="https://via.placeholder.com/150" alt="User Profile" />
+      <img src={`${process.env.PUBLIC_URL}/img/chucky.jpg`} alt="User Profile" />
       <h3>Name: {`${user.name.firstname} ${user.name.lastname}`}</h3>
       <p>
         Address: {`${user.address.number} ${user.address.street}, ${user.address.city}, ${user.address.zipcode}`}

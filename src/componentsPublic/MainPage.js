@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import CarouselItem from "./CarouselItem";
 import { ApiContext } from "../contexts/ApiContext";
+import "./Carousel.css";
 
 function MainPage() {
   const { tList } = useContext(ApiContext);
