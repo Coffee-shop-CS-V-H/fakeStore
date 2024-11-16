@@ -7,26 +7,24 @@ function CarouselItem(props) {
   return (
     <Carousel>
       <Carousel.Item>
-        <ExampleCarouselImage text="First slide" />
+        <ExampleCarouselImage text="First slide" img={props.one.image} />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>{props.one.title}</h3>
+         
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <ExampleCarouselImage text="Second slide" />
+        <ExampleCarouselImage text="Second slide" img={props.two.image} />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>{props.two.title}</h3>
+         
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
+        <ExampleCarouselImage text="Third slide" img={props.three.image}/>
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>{props.three.title}</h3>
+          
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

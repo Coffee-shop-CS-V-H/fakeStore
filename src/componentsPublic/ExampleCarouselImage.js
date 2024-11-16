@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ExampleCarouselImage() {
+function ExampleCarouselImage(props) {
   return (
-    <img src="" alt="keeeeep" />
+    <img src={props.img} alt="keeeeep" />
   )
 }
 
