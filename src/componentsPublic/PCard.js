@@ -5,13 +5,17 @@ import Card from 'react-bootstrap/Card';
 function PCard(props) {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={props.product.image} />
-      <Card.Body>
+      <Card.Img variant="top" src={props.product.image} style={{
+        width: 'auto',
+        maxHeight: '300px',
+        
+      }} />
+      <Card.Body style={{ display: 'flex', flexDirection: 'column' }}>
         <Card.Title>{props.product.title}</Card.Title>
-        <Card.Text>
+        <Card.Text style={{ flexGrow: 1 }}>
         {props.product.descreption}
         </Card.Text>
-        <Button variant="primary">Buy me!</Button>
+        <Button variant="primary" style={{ marginTop: 'auto' }}>Buy me!</Button>
       </Card.Body>
     </Card>
   );
