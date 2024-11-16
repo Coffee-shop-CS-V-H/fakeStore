@@ -66,7 +66,14 @@ function NavItem() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <button onClick={() =>{ setSelectedNav(""), navigate("/")}}>Back</button>
+        <button
+          onClick={() => {
+            setSelectedNav("");
+            navigate("/");
+          }}
+        >
+          Back
+        </button>
       </Nav.Item>
     </Nav>
   );
