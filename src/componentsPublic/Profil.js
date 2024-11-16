@@ -28,13 +28,13 @@ function Profil() {
         Name: {`${user.name.firstname} ${user.name.lastname}`}
       </h3>
       <p className="address">
-        Address:{" "}
+        <b>Address:</b>{" "}
         {`${user.address.number} ${user.address.street}, ${user.address.city}, ${user.address.zipcode}`}
       </p>
-      <p className="address">E-mail address: {user.email}</p>
-      <p className="address">Username: {user.username}</p>
+      <p className="address"><b>E-mail address:</b> {user.email}</p>
+      <p className="address"><b>Username:</b> {user.username}</p>
       <p className="address">
-        Password: <span>{passwordVisible ? user.password : "****"}</span>
+        <b>Password:</b> <span>{passwordVisible ? user.password : "****"}</span>
         <button
           onClick={changePasswordVisibility}
           style={{
