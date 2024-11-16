@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import "./Public.css";
 
 function NavItem() {
   const [selectedNav, setSelectedNav] = useState("");
@@ -8,8 +9,8 @@ function NavItem() {
 
   const initialMenu = (
     <div>
-      <button onClick={() => setSelectedNav("home")}>Home</button>
-      <button onClick={() => setSelectedNav("admin")}>Admin</button>
+      <button className="choose" onClick={() => setSelectedNav("home")}>Public</button>
+      <button className="choose" onClick={() => setSelectedNav("admin")}>Admin</button>
     </div>
   );
 
@@ -36,7 +37,7 @@ function NavItem() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <button
+        <button className="choose"
           onClick={() => {
             setSelectedNav("");
             navigate("/");
@@ -66,7 +67,7 @@ function NavItem() {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <button
+        <button className="choose"
           onClick={() => {
             setSelectedNav("");
             navigate("/");
