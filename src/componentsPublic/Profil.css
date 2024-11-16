@@ -1,0 +1,45 @@
+.profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profilepic {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 5%;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.address {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 15px;
+  }
+
+  .profilepic {
+    font-size: 1.3rem;
+  }
+
+  .address {
+    font-size: 0.9rem;
+  }
+}

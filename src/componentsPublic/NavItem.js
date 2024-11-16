@@ -1,32 +1,95 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
+import "./Public.css";
 
 function NavItem() {
-  return (
-    <>
-    <p className="text-center mt-4 mb-4">Fakestore webshop</p>
+  const [selectedNav, setSelectedNav] = useState("");
+  const navigate = useNavigate();
+
+
+  const initialMenu = (
+    <div>
+      <button className="choose" onClick={() => setSelectedNav("home")}>Public</button>
+      <button className="choose" onClick={() => setSelectedNav("admin")}>Admin</button>
+    </div>
+  );
+
+  const homeMenu = (
+
     <Nav defaultActiveKey="/home" as="ul">
       <Nav.Item as="li">
-        <Nav.Link as={Link} to="/home">Main</Nav.Link>
+        <Nav.Link as={Link} to="/home">
+          Home
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link as={Link} to="/profil">Profil</Nav.Link>
+        <Nav.Link as={Link} to="/profil">
+          Profil
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link as={Link} to="/products">Products</Nav.Link>
+        <Nav.Link as={Link} to="/products">
+          Products
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
+        <Nav.Link as={Link} to="/cart">
+          Cart
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item as="li">
+        <button className="choose"
+          onClick={() => {
+            setSelectedNav("");
+            navigate("/");
+          }}
+        >
+          Back
+        </button>
       </Nav.Item>
     </Nav>
-    </>
     
+    
+  );
+
+  const adminMenu = (
+    <Nav defaultActiveKey="/admin" as="ul">
+      <Nav.Item as="li">
+        <Nav.Link as={Link} to="productsA">
+          Product
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item as="li">
+        <Nav.Link as={Link} to="/users">
+          Users
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item as="li">
+        <Nav.Link as={Link} to="/orders">
+          Orders
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item as="li">
+        <button className="choose"
+          onClick={() => {
+            setSelectedNav("");
+            navigate("/");
+          }}
+        >
+          Back
+        </button>
+      </Nav.Item>
+    </Nav>
+  );
+
+  return (
+    <div>
+      {selectedNav === "" && initialMenu}
+      {selectedNav === "home" && homeMenu}
+      {selectedNav === "admin" && adminMenu}
+    </div>
   );
 }
 
-export default NavItem
-
-  
-
-
+export default NavItem;
