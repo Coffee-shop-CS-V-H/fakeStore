@@ -3,32 +3,21 @@ import CarouselItem from "./CarouselItem";
 import { ApiContext } from "../contexts/ApiContext";
 
 function MainPage() {
-  const { tList, loading } = useContext(ApiContext);
-  const [list, setlist] = useState([]);
-function loaded(){
-  if (!loading) {
-    return <div>Loading...</div>;
-  }
-  else{<CarouselItem one={list[0]} two={list[2]} three={list[1]} />}
-}
+  const { tList } = useContext(ApiContext);
 
-  // useEffect(() => {
-  //   setlist([...tList]);
-  //   console.log(list);
-  //   console.log(tList);
-  //   console.log(typeof list);
-  // }, []);
+  if (!tList || tList.length === 0) {
+    return <p>Loading...</p>;
+  }
+
+  const one = tList[0];
+  const two = tList[1];
+  const three = tList[2];
 
   return (
     <>
-      {/* {list ? (
-        <CarouselItem one={list[0]} two={list[2]} three={list[1]} />
-      ) : (
-        "nincs adat"
-      )} */
-      loaded()}
+      <CarouselItem one={one} two={two} three={three} />
+
       <div>
-      
         <h2>Welcome! </h2>
         <p>
           At our online store, you'll find everything you need! Whether you're
@@ -40,7 +29,6 @@ function loaded(){
           of happy customers and enjoy every moment of your shopping experience!
         </p>
       </div>
-      
     </>
   );
 }
