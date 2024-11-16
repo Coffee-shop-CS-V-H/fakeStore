@@ -21,7 +21,7 @@ function Profil() {
     <div className="profile">
       <img
         className="profilepic"
-        src={`${process.env.PUBLIC_URL}/img/chucky.jpg`}
+        src={`${process.env.PUBLIC_URL}/img/chucky.png`}
         alt="User Profile"
       />
       <h3 className="name">
