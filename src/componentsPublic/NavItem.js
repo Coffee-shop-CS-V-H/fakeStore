@@ -7,6 +7,7 @@ function NavItem() {
   const [selectedNav, setSelectedNav] = useState("");
   const navigate = useNavigate();
 
+
   const initialMenu = (
     <div>
       <button className="choose" onClick={() => setSelectedNav("home")}>Public</button>
@@ -15,6 +16,7 @@ function NavItem() {
   );
 
   const homeMenu = (
+
     <Nav defaultActiveKey="/home" as="ul">
       <Nav.Item as="li">
         <Nav.Link as={Link} to="/home">
@@ -47,6 +49,8 @@ function NavItem() {
         </button>
       </Nav.Item>
     </Nav>
+    
+    
   );
 
   const adminMenu = (
