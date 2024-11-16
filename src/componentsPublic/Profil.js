@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { ApiContext } from "../contexts/ApiContext";
+import "./Profil.css";
 
 function Profil() {
   const { userList } = useContext(ApiContext);
@@ -12,15 +13,15 @@ function Profil() {
   const user = userList[0]; 
 
   return (
-    <div>
-      <img src={`${process.env.PUBLIC_URL}/img/chucky.jpg`} alt="User Profile" />
-      <h3>Name: {`${user.name.firstname} ${user.name.lastname}`}</h3>
-      <p>
+    <div className="profile">
+      <img className="profilepic" src={`${process.env.PUBLIC_URL}/img/chucky.jpg`} alt="User Profile" />
+      <h3 className="name">Name: {`${user.name.firstname} ${user.name.lastname}`}</h3>
+      <p className="address">
         Address: {`${user.address.number} ${user.address.street}, ${user.address.city}, ${user.address.zipcode}`}
       </p>
-      <p>E-mail address: {user.email}</p>
-      <p>Username: {user.username}</p>
-      <p>Password: {user.password}</p>
+      <p className="address">E-mail address: {user.email}</p>
+      <p className="address">Username: {user.username}</p>
+      <p className="address">Password: {user.password}</p>
     </div>
   );
 }
