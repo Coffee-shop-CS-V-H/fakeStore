@@ -3,22 +3,30 @@ import CarouselItem from "./CarouselItem";
 import { ApiContext } from "../contexts/ApiContext";
 
 function MainPage() {
-  const { tList } = useContext(ApiContext);
+  const { tList, loading } = useContext(ApiContext);
   const [list, setlist] = useState([]);
-  useEffect(() => {
-    setlist([...tList]);
-    console.log(list);
-    console.log(tList);
-    console.log(typeof list);
-  }, []);
+function loaded(){
+  if (!loading) {
+    return <div>Loading...</div>;
+  }
+  else{<CarouselItem one={list[0]} two={list[2]} three={list[1]} />}
+}
+
+  // useEffect(() => {
+  //   setlist([...tList]);
+  //   console.log(list);
+  //   console.log(tList);
+  //   console.log(typeof list);
+  // }, []);
 
   return (
     <>
-      {list ? (
+      {/* {list ? (
         <CarouselItem one={list[0]} two={list[2]} three={list[1]} />
       ) : (
         "nincs adat"
-      )}
+      )} */
+      loaded()}
       <div>
       
         <h2>Welcome! </h2>

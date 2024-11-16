@@ -4,6 +4,7 @@ import { myAxios } from "./MyAxios";
 export const ApiContext = createContext("");
 export const ApiProvider = ({ children }) => {
   const [tList, setTList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   function getdata(endPoint) {
     myAxios
@@ -15,7 +16,7 @@ export const ApiProvider = ({ children }) => {
       .catch(function (error) {
         console.log(error);
       })
-      .finally(function () {});
+      .finally(function () { setLoading(true);});
   }
   function postdata(endpoint, data) {
     myAxios
@@ -33,7 +34,7 @@ export const ApiProvider = ({ children }) => {
   }, []);
 
   return (
-    <ApiContext.Provider value={{tList, postdata}}>
+    <ApiContext.Provider value={{tList, postdata, loading}}>
       {children}
     </ApiContext.Provider>
   );
